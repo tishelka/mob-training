@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { Pressable, StyleSheet, Text, View, type PressableProps, type View } from "react-native";
+import { Pressable, StyleSheet, Text, type PressableProps, type View } from "react-native";
 import type { Activity } from "../types/activity";
 
 type Props = PressableProps & { activity: Activity };
