@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "Mobile Training",
+    "slug": "mobile-training",
+    "scheme": "mobtraining",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "plugins": [
+      "expo-router"
+    ],
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
