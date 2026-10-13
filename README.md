@@ -1,0 +1,142 @@
+# Мобильная разработка без паники 📱
+
+**Учебный репозиторий команды «ЧтоДальше»**. Здесь мы начинаем не с кнопок в React Native, а **с самого TypeScript**. Спокойно разбираем переменные, функции, типы, объекты, массивы, импорты и асинхронность. И только затем собираем мобильное приложение на **React Native + Expo + Expo Router**.
+
+Будем писать сами, а не копировать готовые экраны из [MVP «ЧтоДальше»](https://github.com/tishelka/chtodalshe).
+
+> Главное: не нужно понимать весь проект за один вечер. Каждый урок — один кирпичик. Прочитали → попробовали → немного сломали → исправили → сделали задание.
+
+## Две части курса
+
+| | Часть 1: TypeScript | Часть 2: мобильное приложение |
+|---|---|---|
+| Где пишем | Папка `typescript/` | Корень репозитория (`app/`, `src/`) |
+| Что запускаем | Обычный код в терминале | Expo в браузере, эмуляторе или на телефоне |
+| Нужен ли телефон | Нет | Не обязательно: можно начать с web |
+| Результат | Уверенно читаем и пишем TypeScript | Собираем экраны и связываем их с данными |
+
+**Если Git ещё незнаком:** начните с [git-training](https://github.com/tishelka/git-training). Каждый разработчик проходит этот курс в **своём fork**, чтобы задания не конфликтовали с работой второго студента.
+
+## Часть 1. Учимся TypeScript
+
+Понадобятся Node.js **22.13+**, npm, Git и VS Code.
+
+1. На GitHub нажмите **Fork** (создайте свою копию репозитория).
+2. Склонируйте **свой fork** (замените `ВАШ_ЛОГИН`):
+
+```bash
+git clone https://github.com/ВАШ_ЛОГИН/mob-training.git
+cd mob-training/typescript
+npm install
+npm run demo
+npm run check
+npm test
+```
+
+Всё! Вы только что запустили TypeScript **без Expo и без телефона**.
+
+### Уроки TypeScript — строго по порядку
+
+| Урок | О чём |
+|---|---|
+| [01. TypeScript и запуск](docs/01-typescript-start.md) | Зачем TypeScript, Node.js, компиляция |
+| [02. Переменные и базовые типы](docs/02-types-and-variables.md) | `const`, `let`, строки, числа, boolean |
+| [03. Условия и функции](docs/03-functions-and-conditions.md) | Параметры, возвращаемые типы, стрелочные функции |
+| [04. Объекты, массивы и интерфейсы](docs/04-arrays-objects-interfaces.md) | Модели данных будущих экранов |
+| [05. Union, optional, narrowing](docs/05-unions-and-narrowing.md) | Безопасная работа с разными состояниями |
+| [06. Импорты, модули, async/await](docs/06-modules-and-async.md) | Как разносить код по файлам и ждать запросы |
+| [07. Проверка типов и маленькие тесты](docs/07-ts-testing.md) | `tsc` и Vitest |
+
+**Практика:** [TS-01](exercises/01-typescript-basics.md), [TS-02](exercises/02-typescript-models.md), [TS-03](exercises/03-typescript-async.md). Сначала TypeScript, потом React Native.
+
+## Часть 2. Пишем мобильное приложение
+
+Вернитесь из `typescript/` в корень:
+
+```bash
+cd ..
+npm install
+npx expo install --check
+npm run start
+```
+
+Если удобнее браузер — запустите `npm run web`. Для телефона можно отсканировать QR-код через совместимую с выбранным SDK версию Expo Go; для Android-эмулятора нужен Android Studio, а iOS Simulator доступен на macOS с Xcode.
+
+**Первая цель:** увидеть небольшое приложение со списком идей. Нажмите на карточку — откроется отдельный экран. Сервер для первых заданий **не нужен**: данные лежат в `src/data/activities.ts`.
+
+### А как создать Expo-проект вообще с нуля?
+
+Мы уже дали вам готовую маленькую заготовку, чтобы вы не отвлекались от заданий. Но полезно знать команду, из которой обычно начинают:
+
+```bash
+npx create-expo-app@latest my-first-app
+cd my-first-app
+npx expo start
+```
+
+Шаблон и версии меняются со временем; у нас в учебном репозитории зависимости **ориентированы на текущий MVP «ЧтоДальше» (Expo SDK 57)**. Если создаёте новый проект отдельно, сначала посмотрите его `package.json`, не копируйте файлы вслепую между разными SDK.
+
+### Уроки мобильной разработки
+
+| Урок | О чём |
+|---|---|
+| [08. React и JSX](docs/08-react-jsx.md) | Компоненты, props, отображение списков |
+| [09. Создание Expo-проекта](docs/09-expo-setup.md) | Expo, Metro, запуск, web/Android/iOS |
+| [10. Структура проекта](docs/10-project-structure.md) | `app/`, `src/`, `package.json`, `app.json` |
+| [11. Компоненты React Native](docs/11-native-components.md) | View, Text, Pressable, FlatList, ScrollView |
+| [12. Стили и Flexbox](docs/12-styles-flexbox.md) | StyleSheet, отступы, адаптивность |
+| [13. Экраны и Expo Router](docs/13-expo-router.md) | Папки-маршруты, Stack, Tabs, параметры |
+| [14. Состояние и действия](docs/14-state-and-hooks.md) | useState, useEffect, производные данные |
+| [15. Формы и фильтры](docs/15-forms-and-filters.md) | TextInput, типы данных, валидация |
+| [16. API, загрузка и ошибки](docs/16-api-and-errors.md) | fetch, loading/error/ready, FastAPI |
+| [17. Контекст и организация кода](docs/17-context-architecture.md) | Context, разделение экрана и логики |
+| [18. Тесты и отладка](docs/18-mobile-testing.md) | Vitest, TypeScript, что проверять вручную |
+| [19. Связь с MVP](docs/19-whatnext-map.md) | Где всё это находится в «ЧтоДальше» |
+| [20. Частые ошибки](docs/20-troubleshooting.md) | Когда Expo или TypeScript ругаются |
+
+**Практика:** [RN-01](exercises/04-first-components.md), [RN-02](exercises/05-styles.md), [RN-03](exercises/06-navigation.md), [RN-04](exercises/07-state-favorites.md), [RN-05](exercises/08-filters.md), [RN-06](exercises/09-api-loading.md), [RN-07](exercises/10-tests.md), [финальный мини-проект](exercises/11-final-project.md).
+
+## Что уже есть в заготовке
+
+```text
+mob-training/
+├── typescript/                 # Отдельная площадка для языка TS
+│   ├── src/                   # Типы, функции, demo.ts
+│   └── tests/                 # Проверки Vitest
+├── app/                        # Экраны: Expo Router превращает пути в маршруты
+│   ├── _layout.tsx             # Stack навигация
+│   ├── index.tsx               # Список идей
+│   └── activity/[id].tsx       # Экран идеи по ID
+├── src/
+│   ├── components/            # Переиспользуемая карточка
+│   ├── data/                  # Локальные учебные данные
+│   ├── types/                 # Тип Activity
+│   ├── theme/                 # Цвета
+│   └── api/                   # Пример организации запроса к API
+├── docs/                       # Короткие уроки
+├── exercises/                  # Самостоятельные задания
+├── app.json                    # Настройки Expo
+└── package.json                # Скрипты и зависимости
+```
+
+Здесь нет готового экрана фильтров, избранного и четырёх вкладок — **их предстоит сделать вам**. Есть маленький пример работающего экрана и карточки, чтобы было понятно, куда писать следующий код.
+
+## Как сдавать
+
+Смотрите [CONTRIBUTING.md](CONTRIBUTING.md). Для каждого контрольного этапа сделайте коммит, прогоните команды из задания и отправьте ссылку на Pull Request **в своём fork**. Руководитель сможет прокомментировать код до того, как вы перейдёте к следующей теме.
+
+Проверки:
+
+```bash
+# В папке typescript:
+npm run check
+npm test
+
+# В корне мобильного приложения:
+npm run typecheck
+npm test
+```
+
+Когда TypeScript и Expo освоены, можно изучать [реальные экраны «ЧтоДальше»](https://github.com/tishelka/chtodalshe/tree/master/src/features). **Не начинайте с разбора всего большого MVP** — иначе легко запутаться.
+
+Готовы? Начните с [урока 01 — что такое TypeScript](docs/01-typescript-start.md). Удачи!
